@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <!-- ── Session guard: always enter the site via the homepage ── -->
+    <script>
+    (function () {
+        var HOME = 'index.html';
+        var page = location.pathname.split('/').pop() || '';
+        var isHome = (page === HOME || page === '' || page === '/');
+        if (!sessionStorage.getItem('aop_session')) {
+            if (!isHome) { location.replace(HOME); }
+            else { sessionStorage.setItem('aop_session', '1'); }
+        }
+    }());
+    </script>
+    <meta name="viewport" content="width=1280" />
+    <meta name="description" content="About Alpha And Omega Publications &mdash; 30+ years of printing and publishing excellence in Kumasi, Ghana. Our mission, vision, values and trusted partners." />
+    <meta name="keywords" content="about Alpha And Omega Publications, printing company Ghana, Kumasi printing press, publishing house Ghana" />
+    <meta name="theme-color" content="#151b29" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Alpha &amp; Omega Publications" />
+    <meta property="og:title" content="About Us | Alpha &amp; Omega Publications" />
+    <meta property="og:description" content="Discover the story, mission, and production culture behind Alpha &amp; Omega Publications." />
+    <meta property="og:url" content="https://alphaandomegapublications.com/about.html" />
+    <meta property="og:image" content="Alpha logo.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://alphaandomegapublications.com/about.html" />
+    <link rel="icon" type="image/jpeg" href="Alpha logo.jpg" />
+    <title>About Us | Alpha &amp; Omega Publications</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="patch.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+    <!-- ========== PRELOADER ========== -->
+    <div id="preloader">
+        <div class="preloader-inner">
+            <img src="Alpha logo.jpg" alt="Loading Alpha &amp; Omega Publications" class="preloader-img" width="260" height="140">
+            <div class="preloader-spinner"></div>
+        </div>
+    </div>
+
+    <!-- ========== HEADER / NAVBAR ========== -->
+    <header id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo" id="nav-logo">
+                <img src="Alpha logo.jpg"
+                    alt="Alpha &amp; Omega Publications Limited" class="logo-img" loading="eager" width="220" height="80">
+            </a>
+            <nav class="nav-links" id="nav-links">
+                <a href="index.html" class="nav-link" id="link-home">Home</a>
+                <a href="about.html" class="nav-link active" id="link-about">About Us</a>
+                <a href="services.html" class="nav-link" id="link-services">Services</a>
+                <a href="portfolio.html" class="nav-link" id="link-portfolio">Portfolio</a>
+                <a href="contact.html" class="nav-link" id="link-contact">Contact</a>
+                <a href="order.html" class="nav-cta" id="nav-quote-btn">Order Now</a>
+            </nav>
+            <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+
+    <!-- Page Hero Banner -->
+    <div class="page-hero">
+        <div class="page-hero-overlay"></div>
+        <div class="page-hero-content">
+            <p class="section-label">Who We Are</p>
+            <h1 class="page-hero-title"><span class="gold-text">Alpha &amp; Omega Publications</span></h1>
+            <p class="page-hero-desc">30+ years of printing excellence, trusted by thousands across Ghana.</p>
+        </div>
+    </div>
+
+    <!-- ========== ABOUT SECTION ========== -->
+    <section class="about section" id="about">
+        <div class="container">
+            <div class="section-header" data-aos>
+                <p class="section-label">Our Story</p>
+                <h2 class="section-title"><span class="gold-text">Alpha &amp; Omega Publications</span></h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-image-wrapper citations-wrapper" data-aos>
+                    <!-- Dual open-book (click to see both) -->
+                    <div class="citations-open-book" title="Click to view both citations" role="button" tabindex="0" aria-label="Open citation gallery">
+                        <div class="page-side page-left">
+                            <img src="citation1.jpg" alt="Citation of Honor" />
+                            <button class="citation-zoom-btn" data-citation="0" aria-label="Zoom Citation of Honor" title="Zoom in to read">
+                                <i class="fas fa-search-plus"></i>
+                                <span>Zoom</span>
+                            </button>
+                        </div>
+                        <div class="page-side page-right">
+                            <img src="citation2.jpg" alt="Citation of Appreciation" />
+                            <button class="citation-zoom-btn" data-citation="1" aria-label="Zoom Citation of Appreciation" title="Zoom in to read">
+                                <i class="fas fa-search-plus"></i>
+                                <span>Zoom</span>
+                            </button>
+                        </div>
+                        <div class="dual-flip-hint"><i class="fas fa-book-open"></i> Click to Read Both</div>
+                    </div>
+                    <div class="exp-badge">
+                        <span class="exp-num">30</span>
+                        <span class="exp-label">Years<br />of Trust</span>
+                    </div>
+                </div>
+
+                <div class="about-content" data-aos>
+                    <p class="about-intro">
+                        Alpha &amp; Omega Publications is a full-service printing and publishing company committed to delivering
+                        <strong>world-class print products</strong> that help businesses and individuals communicate powerfully.
+                    </p>
+                    <p class="about-text">
+                        Since our founding in 1996, we have served thousands of clients across diverse industries &mdash; from
+                        corporate enterprises and educational institutions to small businesses and independent authors.
+                        Our team of skilled professionals combines cutting-edge printing technology with decades of craft
+                        experience to produce results that exceed expectations every time.
+                    </p>
+
+                    <div class="mv-cards">
+                        <div class="mv-card" id="about-mission">
+                            <div class="mv-icon"><i class="fas fa-bullseye"></i></div>
+                            <div>
+                                <h4>Our Mission</h4>
+                                <p>To meet the definite needs of our cherished clients by offering them excellent services.</p>
+                            </div>
+                        </div>
+                        <div class="mv-card" id="about-vision">
+                            <div class="mv-icon"><i class="fas fa-eye"></i></div>
+                            <div>
+                                <h4>Our Vision</h4>
+                                <p>To be the most vibrant Printing and Publishing House in Ghana.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-features">
+                        <div class="premium-feature-item">
+                            <div class="pf-icon"><i class="fas fa-bolt"></i></div>
+                            <div class="pf-text">Fast Turnaround Time</div>
+                        </div>
+                        <div class="premium-feature-item">
+                            <div class="pf-icon"><i class="fas fa-leaf"></i></div>
+                            <div class="pf-text">Eco-Friendly Inks</div>
+                        </div>
+                        <div class="premium-feature-item">
+                            <div class="pf-icon"><i class="fas fa-tags"></i></div>
+                            <div class="pf-text">Competitive Pricing</div>
+                        </div>
+                        <div class="premium-feature-item">
+                            <div class="pf-icon"><i class="fas fa-pen-nib"></i></div>
+                            <div class="pf-text">Custom Design Support</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== WHY CHOOSE US ========== -->
+    <section class="why-us section" id="why-us">
+        <div class="container">
+            <div class="section-header" data-aos>
+                <p class="section-label">Our Advantage</p>
+                <h2 class="section-title">Why Choose <span class="gold-text">Us?</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="why-grid">
+                <div class="why-card" data-aos id="why-quality">
+                    <div class="why-icon"><i class="fas fa-gem"></i></div>
+                    <h4>Unmatched Quality</h4>
+                    <p>We use only premium inks and materials on the latest digital and offset presses to guarantee stunning results.</p>
+                </div>
+                <div class="why-card" data-aos id="why-speed">
+                    <div class="why-icon"><i class="fas fa-bolt"></i></div>
+                    <h4>Fast Delivery</h4>
+                    <p>Rush and standard turnaround options available. We respect your deadlines and always deliver on time.</p>
+                </div>
+                <div class="why-card" data-aos id="why-price">
+                    <div class="why-icon"><i class="fas fa-tags"></i></div>
+                    <h4>Best Pricing</h4>
+                    <p>Competitive, transparent pricing with no hidden fees. Volume discounts available for bulk orders.</p>
+                </div>
+                <div class="why-card" data-aos id="why-support">
+                    <div class="why-icon"><i class="fas fa-headset"></i></div>
+                    <h4>Expert Support</h4>
+                    <p>Our dedicated team is always ready to guide you from design concept through final delivery.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TRUSTED PARTNERS ========== -->
+    <section class="partners-section" id="partners">
+        <div class="container">
+            <div class="section-header" data-aos>
+                <p class="section-label">Trusted By The Best</p>
+                <h2 class="section-title">Our Proud <span class="gold-text">Partners &amp; Clients</span></h2>
+                <div class="section-line"></div>
+                <p class="section-desc">Brands and institutions across Ghana that trust us to deliver print excellence.</p>
+            </div>
+            <div class="logo-wall" data-aos>
+                <div class="logo-tile" id="partner-gifas"><img src="gifas.jpeg" alt="Gifas Mixture" /><span class="logo-tooltip">Gifas Mixture</span></div>
+                <div class="logo-tile" id="partner-time"><img src="timeherbal.jpeg" alt="Time Herbal" /><span class="logo-tooltip">Time Herbal</span></div>
+                <div class="logo-tile" id="partner-bestman"><img src="bestman.jpeg" alt="Bestman Capsules" /><span class="logo-tooltip">Bestman Capsules</span></div>
+                <div class="logo-tile" id="partner-gcu"><img src="gcu.jpeg" alt="Garden City University" /><span class="logo-tooltip">Garden City University</span></div>
+                <div class="logo-tile" id="partner-tradewinds"><img src="tradewinds.jpeg" alt="Tradewinds" /><span class="logo-tooltip">Tradewinds</span></div>
+                <div class="logo-tile" id="partner-kumawuman"><img src="kumawumanrbplc.jpeg" alt="Kumawuman Rural Bank" /><span class="logo-tooltip">Kumawuman Rural Bank</span></div>
+            </div>
+            <div class="trust-bar" data-aos>
+                <div class="trust-stat"><i class="fas fa-building"></i><span>50+ Corporate Clients</span></div>
+                <div class="trust-divider"></div>
+                <div class="trust-stat"><i class="fas fa-university"></i><span>15+ Educational Institutions</span></div>
+                <div class="trust-divider"></div>
+                <div class="trust-stat"><i class="fas fa-handshake"></i><span>30+ Years of Partnerships</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TESTIMONIALS ========== -->
+    <section class="testimonials section" id="testimonials">
+        <div class="container">
+            <div class="section-header" data-aos>
+                <p class="section-label">Client Reviews</p>
+                <h2 class="section-title">Words From Our <span class="gold-text">Happy Clients</span></h2>
+                <div class="section-line"></div>
+                <p class="section-desc" style="margin-top:10px;">Click any review to read the full testimonial.</p>
+            </div>
+            <!-- Review Navigation Controls -->
+            <div class="review-nav-controls">
+                <button class="review-nav-btn" id="review-prev-btn" aria-label="Previous review"><i class="fas fa-chevron-left"></i></button>
+                <div class="review-dots" id="review-dots">
+                    <span class="review-dot active" data-index="0"></span>
+                    <span class="review-dot" data-index="1"></span>
+                    <span class="review-dot" data-index="2"></span>
+                    <span class="review-dot" data-index="3"></span>
+                    <span class="review-dot" data-index="4"></span>
+                    <span class="review-dot" data-index="5"></span>
+                </div>
+                <button class="review-nav-btn" id="review-next-btn" aria-label="Next review"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="review-wall">
+                <div class="review-track">
+                    <!-- Real card 1 -->
+                    <div class="review-card" data-review-index="0" role="button" tabindex="0" aria-label="Read Gifas Mixture review" title="Click to read full review">
+                        <div class="review-read-hint"><i class="fas fa-expand-alt"></i></div>
+                        <div class="review-top">
+                            <div class="review-avatar"><img src="gifas.jpeg" alt="Gifas Mixture"/></div>
+                            <div><strong>Gifas Mixture</strong><span>Herbal Products</span></div>
+                        </div>
+                        <p class="review-text">"Alpha &amp; Omega consistently delivers clean, compliant labels with strong color accuracy. Their turnaround has helped us launch products on schedule without quality compromises."</p>
+                        <span class="review-tag"><i class="fas fa-tag"></i> Packaging &amp; Labels</span>
+                    </div>
+                    <!-- Real card 2 -->
+                    <div class="review-card" data-review-index="1" role="button" tabindex="0" aria-label="Read Time Herbal review" title="Click to read full review">
+                        <div class="review-read-hint"><i class="fas fa-expand-alt"></i></div>
+                        <div class="review-top">
+                            <div class="review-avatar"><img src="timeherbal.jpeg" alt="Time Herbal"/></div>
+                            <div><strong>Time Herbal / Mixture</strong><span>Natural Health</span></div>
+                        </div>
+                        <p class="review-text">"We trust Alpha &amp; Omega for high-volume packaging because they maintain the same quality across every batch. Their team communicates clearly and resolves issues fast."</p>
+                        <span class="review-tag"><i class="fas fa-tag"></i> Product Packaging</span>
+                    </div>
+                    <!-- Real card 3 -->
+                    <div class="review-card" data-review-index="2" role="button" tabindex="0" aria-label="Read Kumawuman Rural Bank review" title="Click to read full review">
+                        <div class="review-read-hint"><i class="fas fa-expand-alt"></i></div>
+                        <div class="review-top">
+                            <div class="review-avatar"><img src="kumawumanrbplc.jpeg" alt="Kumawuman Rural Bank Ltd."/></div>
+                            <div><strong>Kumawuman Rural Bank Ltd.</strong><span>Banking &amp; Finance</span></div>
+                        </div>
+                        <p class="review-text">"We appreciate the high standards maintained by Alpha and Omega Publications. Their attention to detail and quality assurance set them apart in the industry."</p>
+                        <span class="review-tag"><i class="fas fa-tag"></i> Institutional Print</span>
+                    </div>
+                    <!-- Real card 4 -->
+                    <div class="review-card" data-review-index="3" role="button" tabindex="0" aria-label="Read Bestman Capsules review" title="Click to read full review">
+                        <div class="review-read-hint"><i class="fas fa-expand-alt"></i></div>
+                        <div class="review-top">
+                            <div class="review-avatar"><img src="bestman.jpeg" alt="Bestman Capsules"/></div>
+                            <div><strong>Bestman Capsules</strong><span>Health &amp; Pharmaceuticals</span></div>
+                        </div>
+                        <p class="review-text">"In our line of business, quality packaging is essential, and Alpha and Omega Publications continues to meet our standards with precision and reliability."</p>
+                        <span class="review-tag"><i class="fas fa-tag"></i> Product Packaging</span>
+                    </div>
+                    <!-- Real card 5 -->
+                    <div class="review-card" data-review-index="4" role="button" tabindex="0" aria-label="Read Garden City University review" title="Click to read full review">
+                        <div class="review-read-hint"><i class="fas fa-expand-alt"></i></div>
+                        <div class="review-top">
+                            <div class="review-avatar"><img src="gcu.jpeg" alt="Garden City University"/></div>
+                            <div><strong>Garden City University</strong><span>Higher Education</span></div>
+                        </div>
+                        <p class="review-text">"We regard Alpha and Omega Publications as a dependable partner in the production of academic and administrative materials. Their professionalism aligns well with our institutional expectations."</p>
+                        <span class="review-tag"><i class="fas fa-tag"></i> Academic Materials</span>
+                    </div>
+                    <!-- Real card 6 -->
+                    <div class="review-card" data-review-index="5" role="button" tabindex="0" aria-label="Read Tradewinds Chemist review" title="Click to read full review">
+                        <div class="review-read-hint"><i class="fas fa-expand-alt"></i></div>
+                        <div class="review-top">
+                            <div class="review-avatar"><img src="tradewinds.jpeg" alt="Tradewinds Chemist Limited"/></div>
+                            <div><strong>Tradewinds Chemist Limited</strong><span>Pharmacy &amp; Healthcare</span></div>
+                        </div>
+                        <p class="review-text">"In an environment where errors are not acceptable, Alpha and Omega Publications delivers with a level of dependability that supports our operational confidence."</p>
+                        <span class="review-tag"><i class="fas fa-tag"></i> Corporate Print</span>
+                    </div>
+
+                    <!-- ── aria-hidden duplicates for seamless infinite scroll ── -->
+                    <div class="review-card" aria-hidden="true">
+                        <div class="review-top">
+                            <div class="review-avatar"><img src="gifas.jpeg" alt=""/></div>
+                            <div><strong>Gifas Mixture</strong><span>Herbal Products</span></div>
+                        </div>
+                        <p class="review-text">"Their print finishes hold up on shelves and in transport. We have seen fewer packaging defects and stronger brand presentation since switching to Alpha &amp; Omega."</p>
+                        <span class="review-tag"><i class="fas fa-tag"></i> Packaging &amp; Labels</span>
+                    </div>
+                    <div class="review-card" aria-hidden="true">
+                        <div class="review-top">
+                            <div class="review-avatar"><img src="timeherbal.jpeg" alt=""/></div>
+                            <div><strong>Time Herbal / Mixture</strong><span>Natural Health</span></div>
+                        </div>
+                        <p class="review-text">"From proofing to final delivery, the process is structured and dependable. We get predictable timelines, clear communication, and high-quality output every cycle."</p>
+                        <span class="review-tag"><i class="fas fa-tag"></i> Product Packaging</span>
+                    </div>
+                    <div class="review-card" aria-hidden="true">
+                        <div class="review-top">
+                            <div class="review-avatar"><img src="kumawumanrbplc.jpeg" alt=""/></div>
+                            <div><strong>Kumawuman Rural Bank Ltd.</strong><span>Banking &amp; Finance</span></div>
+                        </div>
+                        <p class="review-text">"We appreciate the high standards maintained by Alpha and Omega Publications. Their attention to detail and quality assurance set them apart in the industry."</p>
+                        <span class="review-tag"><i class="fas fa-tag"></i> Institutional Print</span>
+                    </div>
+                    <div class="review-card" aria-hidden="true">
+                        <div class="review-top">
+                            <div class="review-avatar"><img src="bestman.jpeg" alt=""/></div>
+                            <div><strong>Bestman Capsules</strong><span>Health &amp; Pharmaceuticals</span></div>
+                        </div>
+                        <p class="review-text">"In our line of business, quality packaging is essential, and Alpha and Omega Publications continues to meet our standards with precision and reliability."</p>
+                        <span class="review-tag"><i class="fas fa-tag"></i> Product Packaging</span>
+                    </div>
+                    <div class="review-card" aria-hidden="true">
+                        <div class="review-top">
+                            <div class="review-avatar"><img src="gcu.jpeg" alt=""/></div>
+                            <div><strong>Garden City University</strong><span>Higher Education</span></div>
+                        </div>
+                        <p class="review-text">"We regard Alpha and Omega Publications as a dependable partner in the production of academic and administrative materials. Their professionalism aligns well with our institutional expectations."</p>
+                        <span class="review-tag"><i class="fas fa-tag"></i> Academic Materials</span>
+                    </div>
+                    <div class="review-card" aria-hidden="true">
+                        <div class="review-top">
+                            <div class="review-avatar"><img src="tradewinds.jpeg" alt=""/></div>
+                            <div><strong>Tradewinds Chemist Limited</strong><span>Pharmacy &amp; Healthcare</span></div>
+                        </div>
+                        <p class="review-text">"In an environment where errors are not acceptable, Alpha and Omega Publications delivers with a level of dependability that supports our operational confidence."</p>
+                        <span class="review-tag"><i class="fas fa-tag"></i> Corporate Print</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer" id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="index.html" class="footer-logo">
+                            <img src="Alpha logo.jpg" alt="Alpha &amp; Omega Publications Limited" class="logo-img footer-logo-img" loading="lazy" width="220" height="80">
+                        </a>
+                        <p>Your trusted partner for all professional printing and publishing needs. Quality you can see, service you can feel.</p>
+                        <div class="footer-social">
+                            <a href="https://wa.me/233267621569" class="footer-wa-icon" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/nana-kwaku-akuoko-a770a5404?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_android" class="dev-linkedin-icon" aria-label="Developer LinkedIn" target="_blank" rel="noopener noreferrer" title="Website Developer">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer-links-col">
+                        <h5>Quick Links</h5>
+                        <ul>
+                            <li><a href="index.html"><i class="fas fa-angle-right"></i> Home</a></li>
+                            <li><a href="about.html"><i class="fas fa-angle-right"></i> About Us</a></li>
+                            <li><a href="services.html"><i class="fas fa-angle-right"></i> Services</a></li>
+                            <li><a href="portfolio.html"><i class="fas fa-angle-right"></i> Portfolio</a></li>
+                            <li><a href="contact.html"><i class="fas fa-angle-right"></i> Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-col">
+                        <h5>Our Services</h5>
+                        <ul>
+                            <li><a href="services.html"><i class="fas fa-angle-right"></i> Book Printing</a></li>
+                            <li><a href="services.html"><i class="fas fa-angle-right"></i> Flyers &amp; Posters</a></li>
+                            <li><a href="services.html"><i class="fas fa-angle-right"></i> Business Cards</a></li>
+                            <li><a href="services.html"><i class="fas fa-angle-right"></i> Banners &amp; Stickers</a></li>
+                            <li><a href="services.html"><i class="fas fa-angle-right"></i> Custom Printing</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact-col">
+                        <h5>Contact Info</h5>
+                        <ul>
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <a href="https://www.google.com/maps/search/Alpha+and+Omega+Publications+Asafo+Kumasi+Ghana"
+                                   target="_blank" rel="noopener noreferrer" class="footer-map-link">
+                                    BH 41, Asafo Labour Roundabout, Kumasi, Ghana
+                                </a>
+                            </li>
+                            <li><i class="fas fa-phone-alt"></i> <a href="tel:+233267621569">+233 26 762 1569</a>, <a href="tel:+233273609207">+233 27 360 9207</a></li>
+                            <li><i class="fas fa-envelope"></i> <a href="mailto:alphaandomegapublications@gmail.com">alphaandomegapublications@gmail.com</a></li>
+                            <li><i class="fas fa-clock"></i> Mon &ndash; Fri: 8AM &ndash; 5PM | Sat: 8AM &ndash; 2PM</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-flex">
+                    <p>&copy; <span id="footer-year"></span> Alpha &amp; Omega Publications. All rights reserved.</p>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a class="whatsapp-float" href="https://wa.me/233267621569" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <!-- Scroll-to-top Button -->
+    <button class="scroll-top" id="scroll-top-btn" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Dual Citation Lightbox (View Both) -->
+    <div id="citation-lightbox" class="lightbox-modal">
+        <span class="lightbox-close">&times;</span>
+        <div class="lightbox-dual-content">
+            <img src="citation1.jpg" alt="Citation 1" />
+            <img src="citation2.jpg" alt="Citation 2" />
+        </div>
+    </div>
+
+    <!-- Single Citation Lightbox (Zoom individual) -->
+    <div id="citation-single-lightbox" class="citation-single-overlay" role="dialog" aria-modal="true" aria-label="Citation viewer">
+        <div class="citation-single-box">
+            <button class="citation-single-close" id="cs-close" aria-label="Close">&times;</button>
+            <div class="citation-single-nav">
+                <button class="citation-single-arrow" id="cs-prev" aria-label="Previous citation"><i class="fas fa-chevron-left"></i></button>
+                <span class="citation-single-counter" id="cs-counter">1 / 2</span>
+                <button class="citation-single-arrow" id="cs-next" aria-label="Next citation"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="citation-single-img-wrap">
+                <img id="cs-img" src="" alt="" />
+            </div>
+            <p class="citation-single-label" id="cs-label"></p>
+        </div>
+    </div>
+
+    <!-- ====== REVIEW DETAIL MODAL ====== -->
+    <div id="review-modal" class="review-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="rm-name">
+        <div class="review-modal-box">
+            <button class="review-modal-close" id="review-modal-close" aria-label="Close review">&times;</button>
+            <div class="review-modal-nav">
+                <button class="review-modal-arrow" id="rm-prev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+                <span class="review-modal-counter" id="rm-counter">1 / 6</span>
+                <button class="review-modal-arrow" id="rm-next" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="review-modal-avatar-wrap">
+                <img id="rm-avatar" src="" alt="" />
+            </div>
+            <strong class="review-modal-name" id="rm-name"></strong>
+            <span class="review-modal-industry" id="rm-industry"></span>
+            <p class="review-modal-text" id="rm-text"></p>
+            <span class="review-modal-tag" id="rm-tag"><i class="fas fa-tag"></i> <span id="rm-tag-label"></span></span>
+        </div>
+    </div>
+
+    <script src="background.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+    // ===== REVIEW MODAL + NAVIGATION =====
+    (function() {
+      const reviews = [
+        { avatar:'gifas.jpeg',      name:'Gifas Mixture',              industry:'Herbal Products',          tag:'Packaging & Labels',    text:'"Alpha & Omega consistently delivers clean, compliant labels with strong color accuracy. Their turnaround has helped us launch products on schedule without quality compromises. Every batch arrives print-ready, and the registration is always spot-on &mdash; something that truly matters for regulatory compliance in our sector."' },
+        { avatar:'timeherbal.jpeg', name:'Time Herbal / Mixture',      industry:'Natural Health',           tag:'Product Packaging',     text:'"We trust Alpha & Omega for high-volume packaging because they maintain the same quality across every batch. Their team communicates clearly, resolves issues fast, and always keeps us informed. We have never missed a product launch date since partnering with them."' },
+        { avatar:'kumawumanrbplc.jpeg', name:'Kumawuman Rural Bank Ltd.', industry:'Banking & Finance',       tag:'Institutional Print',   text:'"We appreciate the high standards maintained by Alpha and Omega Publications. Their attention to detail and quality assurance set them apart in the industry. The clarity and precision of their institutional print work &mdash; from letterheads to reports &mdash; reflects positively on our brand at every level."' },
+        { avatar:'bestman.jpeg',    name:'Bestman Capsules',           industry:'Health & Pharmaceuticals', tag:'Product Packaging',     text:'"In our line of business, quality packaging is essential, and Alpha and Omega Publications continues to meet our standards with precision and reliability. Each delivery is consistent, professional, and arrives within the agreed timeline &mdash; exactly what a pharmaceutical operation requires."' },
+        { avatar:'gcu.jpeg',        name:'Garden City University',     industry:'Higher Education',          tag:'Academic Materials',    text:'"We regard Alpha and Omega Publications as a dependable partner in the production of academic and administrative materials. Their professionalism aligns well with our institutional expectations. The quality of course materials, prospectuses, and administrative documents they produce reflects our university\'s standards of excellence."' },
+        { avatar:'tradewinds.jpeg', name:'Tradewinds Chemist Limited', industry:'Pharmacy & Healthcare',    tag:'Corporate Print',       text:'"In an environment where errors are not acceptable, Alpha and Omega Publications delivers with a level of dependability that supports our operational confidence. Their pharmaceutical-grade labeling accuracy and consistent turnaround time make them an indispensable print partner for our business."' }
+      ];
+
+      let current = 0;
+      const modal   = document.getElementById('review-modal');
+      const closeBtn = document.getElementById('review-modal-close');
+      const prevBtn  = document.getElementById('rm-prev');
+      const nextBtn  = document.getElementById('rm-next');
+      const counter  = document.getElementById('rm-counter');
+      const rmAvatar = document.getElementById('rm-avatar');
+      const rmName   = document.getElementById('rm-name');
+      const rmInd    = document.getElementById('rm-industry');
+      const rmText   = document.getElementById('rm-text');
+      const rmTagLbl = document.getElementById('rm-tag-label');
+      const dots     = document.querySelectorAll('.review-dot');
+      const navPrev  = document.getElementById('review-prev-btn');
+      const navNext  = document.getElementById('review-next-btn');
+
+      function setDot(idx) {
+        dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+      }
+
+      function openReview(idx) {
+        current = ((idx % reviews.length) + reviews.length) % reviews.length;
+        const r = reviews[current];
+        rmAvatar.src = r.avatar;
+        rmAvatar.alt = r.name;
+        rmName.textContent = r.name;
+        rmInd.textContent = r.industry;
+        rmText.innerHTML = r.text;
+        rmTagLbl.textContent = r.tag;
+        counter.textContent = (current + 1) + ' / ' + reviews.length;
+        setDot(current);
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeReview() {
+        modal.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+
+      // Open on real card click
+      document.querySelectorAll('.review-card[data-review-index]').forEach(function(card) {
+        card.addEventListener('click', function() { openReview(+this.dataset.reviewIndex); });
+        card.addEventListener('keydown', function(e) { if(e.key==='Enter'||e.key===' ') openReview(+this.dataset.reviewIndex); });
+      });
+
+      // Modal nav
+      prevBtn.addEventListener('click', function() { openReview(current - 1); });
+      nextBtn.addEventListener('click', function() { openReview(current + 1); });
+
+      // Strip nav dots
+      dots.forEach(function(d) {
+        d.addEventListener('click', function() {
+          current = +this.dataset.index;
+          scrollToCurrent();
+        });
+      });
+      navPrev.addEventListener('click', function() {
+        current = ((current - 1) + reviews.length) % reviews.length;
+        scrollToCurrent();
+      });
+      navNext.addEventListener('click', function() {
+        current = (current + 1) % reviews.length;
+        scrollToCurrent();
+      });
+
+      function scrollToCurrent() {
+        const track = document.querySelector('.review-track');
+        const cardW = 340 + 24; // Card width + gap
+        track.style.transform = 'translateX(-' + (current * cardW) + 'px)';
+        setDot(current);
+      }
+
+      // Close
+      closeBtn.addEventListener('click', closeReview);
+      modal.addEventListener('click', function(e) { if(e.target === modal) closeReview(); });
+      document.addEventListener('keydown', function(e) {
+        if (!modal.classList.contains('open')) return;
+        if (e.key === 'Escape') closeReview();
+        if (e.key === 'ArrowLeft') openReview(current - 1);
+        if (e.key === 'ArrowRight') openReview(current + 1);
+      });
+    })();
+    </script>
+
+    <script>
+    // ===== INDIVIDUAL CITATION ZOOM =====
+    (function() {
+      var CITATIONS = [
+        { src: 'citation1.jpg', label: 'Citation of Honor' },
+        { src: 'citation2.jpg', label: 'Citation of Appreciation' }
+      ];
+      var overlay = document.getElementById('citation-single-lightbox');
+      var csImg   = document.getElementById('cs-img');
+      var csLabel = document.getElementById('cs-label');
+      var csCount = document.getElementById('cs-counter');
+      var csClose = document.getElementById('cs-close');
+      var csPrev  = document.getElementById('cs-prev');
+      var csNext  = document.getElementById('cs-next');
+      var current = 0;
+
+      function openCitation(idx) {
+        current = ((idx % CITATIONS.length) + CITATIONS.length) % CITATIONS.length;
+        var c = CITATIONS[current];
+        csImg.src = c.src;
+        csImg.alt = c.label;
+        csLabel.textContent = c.label;
+        csCount.textContent = (current + 1) + ' / ' + CITATIONS.length;
+        overlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeCitation() {
+        overlay.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+
+      // Attach zoom buttons &mdash; stop propagation so the parent book lightbox doesn't fire
+      document.querySelectorAll('.citation-zoom-btn').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          openCitation(+btn.dataset.citation);
+        });
+      });
+
+      csClose.addEventListener('click', closeCitation);
+      csPrev.addEventListener('click', function() { openCitation(current - 1); });
+      csNext.addEventListener('click', function() { openCitation(current + 1); });
+      overlay.addEventListener('click', function(e) { if (e.target === overlay) closeCitation(); });
+      document.addEventListener('keydown', function(e) {
+        if (!overlay.classList.contains('open')) return;
+        if (e.key === 'Escape') closeCitation();
+        if (e.key === 'ArrowLeft') openCitation(current - 1);
+        if (e.key === 'ArrowRight') openCitation(current + 1);
+      });
+    })();
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

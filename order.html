@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <!-- ── Session guard: always enter the site via the homepage ── -->
+    <script>
+    (function () {
+        var HOME = 'index.html';
+        var page = location.pathname.split('/').pop() || '';
+        var isHome = (page === HOME || page === '' || page === '/');
+        if (!sessionStorage.getItem('aop_session')) {
+            if (!isHome) { location.replace(HOME); }
+            else { sessionStorage.setItem('aop_session', '1'); }
+        }
+    }());
+    </script>
+    <meta name="viewport" content="width=1280" />
+    <meta name="description" content="Place an order online with Alpha And Omega Publications &mdash; Choose your printing service, set specifications, and submit in 3 easy steps." />
+    <meta name="keywords" content="order printing Ghana, print order Alpha Omega, online printing Kumasi" />
+    <meta name="theme-color" content="#151b29" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Alpha &amp; Omega Publications" />
+    <meta property="og:title" content="Place Order | Alpha &amp; Omega Publications" />
+    <meta property="og:description" content="Place your printing order in minutes. Share your specs and receive a tailored response within 24 hours." />
+    <meta property="og:url" content="https://alphaandomegapublications.com/order.html" />
+    <meta property="og:image" content="Alpha logo.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://alphaandomegapublications.com/order.html" />
+    <link rel="icon" type="image/jpeg" href="Alpha logo.jpg" />
+    <title>Place Order | Alpha &amp; Omega Publications</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="patch.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+    <!-- ========== PRELOADER ========== -->
+    <div id="preloader">
+        <div class="preloader-inner">
+            <img src="Alpha logo.jpg" alt="Loading Alpha &amp; Omega Publications" class="preloader-img" width="260" height="140">
+            <div class="preloader-spinner"></div>
+        </div>
+    </div>
+
+    <!-- ========== HEADER / NAVBAR ========== -->
+    <header id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo" id="nav-logo">
+                <img src="Alpha logo.jpg"
+                    alt="Alpha &amp; Omega Publications Limited" class="logo-img" loading="eager" width="220" height="80">
+            </a>
+            <nav class="nav-links" id="nav-links">
+                <a href="index.html" class="nav-link" id="link-home">Home</a>
+                <a href="about.html" class="nav-link" id="link-about">About Us</a>
+                <a href="services.html" class="nav-link" id="link-services">Services</a>
+                <a href="portfolio.html" class="nav-link" id="link-portfolio">Portfolio</a>
+                <a href="contact.html" class="nav-link" id="link-contact">Contact</a>
+                <a href="order.html" class="nav-cta active" id="nav-quote-btn">Order Now</a>
+            </nav>
+            <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+
+    <!-- Page Hero Banner -->
+    <div class="page-hero">
+        <div class="page-hero-overlay"></div>
+        <div class="page-hero-content">
+            <p class="section-label">Quick &amp; Easy</p>
+            <h1 class="page-hero-title">Place Your <span class="gold-text">Order</span></h1>
+            <p class="page-hero-desc">Fill out the form below and our team will contact you with a quote within 24 hours.</p>
+        </div>
+    </div>
+
+    <!-- ===== ORDER PLATFORM ===== -->
+    <div class="order-platform" id="order">
+        <div class="order-platform-inner">
+            <div class="order-header" data-aos>
+                <div class="order-header-badge">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Quick &amp; Easy</span>
+                </div>
+                <h3>Place Your <span class="gold-text">Order</span></h3>
+                <p>Fill out the form below and our team will contact you with a quote within 24 hours.</p>
+            </div>
+
+            <form class="order-form" id="order-form" novalidate>
+
+                <!-- Step 1: Service Selection -->
+                <div class="order-step" id="order-step-1">
+                    <div class="step-indicator">
+                        <span class="step-badge">Step 1 of 3</span>
+                        <h4>Choose Your Service</h4>
+                    </div>
+
+                    <div class="order-categories" id="order-categories">
+
+                        <!-- CATEGORY 1: PRINTING SERVICES -->
+                        <div class="order-category" id="cat-printing">
+                            <button type="button" class="order-cat-header" id="cat-printing-btn" aria-expanded="false">
+                                <div class="order-cat-header-left">
+                                    <div class="order-cat-icon"><i class="fas fa-print"></i></div>
+                                    <div class="order-cat-text">
+                                        <span class="order-cat-title">Printing Services</span>
+                                        <span class="order-cat-desc">Explore our premium print &amp; publishing solutions</span>
+                                    </div>
+                                </div>
+                                <div class="order-cat-chevron"><i class="fas fa-chevron-down"></i></div>
+                            </button>
+                            <div class="order-cat-body" id="body-printing">
+                                <div class="service-selector-grid">
+                                    <label class="service-option" for="opt-business-cards"><input type="radio" name="order-service" id="opt-business-cards" value="Business Cards" /><div class="service-option-card"><i class="fas fa-id-card"></i><span>Business Cards</span></div></label>
+                                    <label class="service-option" for="opt-calendars"><input type="radio" name="order-service" id="opt-calendars" value="Calendars" /><div class="service-option-card"><i class="fas fa-calendar-alt"></i><span>Calendars</span></div></label>
+                                    <label class="service-option" for="opt-envelopes"><input type="radio" name="order-service" id="opt-envelopes" value="Envelopes" /><div class="service-option-card"><i class="fas fa-envelope-open"></i><span>Envelopes</span></div></label>
+                                    <label class="service-option" for="opt-labels"><input type="radio" name="order-service" id="opt-labels" value="Labels" /><div class="service-option-card"><i class="fas fa-tags"></i><span>Labels</span></div></label>
+                                    <label class="service-option" for="opt-magazines"><input type="radio" name="order-service" id="opt-magazines" value="Magazines" /><div class="service-option-card"><i class="fas fa-book-open"></i><span>Magazines</span></div></label>
+                                    <label class="service-option" for="opt-packaging"><input type="radio" name="order-service" id="opt-packaging" value="Packaging" /><div class="service-option-card"><i class="fas fa-box-open"></i><span>Packaging</span></div></label>
+                                    <label class="service-option" for="opt-posters"><input type="radio" name="order-service" id="opt-posters" value="Posters" /><div class="service-option-card"><i class="fas fa-image"></i><span>Posters</span></div></label>
+                                    <label class="service-option" for="opt-banners"><input type="radio" name="order-service" id="opt-banners" value="Banners" /><div class="service-option-card"><i class="fas fa-flag"></i><span>Banners</span></div></label>
+                                    <label class="service-option" for="opt-flyers"><input type="radio" name="order-service" id="opt-flyers" value="Flyers" /><div class="service-option-card"><i class="fas fa-paper-plane"></i><span>Flyers</span></div></label>
+                                    <label class="service-option" for="opt-brochures"><input type="radio" name="order-service" id="opt-brochures" value="Brochures" /><div class="service-option-card"><i class="fas fa-file-alt"></i><span>Brochures</span></div></label>
+                                    <label class="service-option" for="opt-stickers"><input type="radio" name="order-service" id="opt-stickers" value="Stickers" /><div class="service-option-card"><i class="fas fa-certificate"></i><span>Stickers</span></div></label>
+                                    <label class="service-option" for="opt-custom"><input type="radio" name="order-service" id="opt-custom" value="Custom Printing" /><div class="service-option-card"><i class="fas fa-sliders-h"></i><span>Custom Printing</span></div></label>
+                                    <label class="service-option" for="opt-book-printing"><input type="radio" name="order-service" id="opt-book-printing" value="Book Printing" /><div class="service-option-card"><i class="fas fa-book-open"></i><span>Book Printing</span></div></label>
+                                    <label class="service-option" for="opt-exercise-books"><input type="radio" name="order-service" id="opt-exercise-books" value="Exercise Books" /><div class="service-option-card"><i class="fas fa-book"></i><span>Exercise Books</span></div></label>
+                                    <label class="service-option" for="opt-gifas"><input type="radio" name="order-service" id="opt-gifas" value="Gifas Herbal Mixture" /><div class="service-option-card"><i class="fas fa-leaf"></i><span>Gifas Herbal Mixture</span></div></label>
+                                    <label class="service-option" for="opt-timeherbal"><input type="radio" name="order-service" id="opt-timeherbal" value="Time Herbal Mixture" /><div class="service-option-card"><i class="fas fa-spa"></i><span>Time Herbal Mixture</span></div></label>
+                                </div>
+                                <div class="order-step-nav cat-step-nav">
+                                    <span class="order-error" id="err-order-service-print"></span>
+                                    <button type="button" class="btn btn-gold" id="order-next-printing">Next Step <i class="fas fa-arrow-right"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CATEGORY 2: BOOK SALES -->
+                        <div class="order-category" id="cat-books">
+                            <button type="button" class="order-cat-header" id="cat-books-btn" aria-expanded="false">
+                                <div class="order-cat-header-left">
+                                    <div class="order-cat-icon"><i class="fas fa-book-reader"></i></div>
+                                    <div class="order-cat-text">
+                                        <span class="order-cat-title">Book Sales</span>
+                                        <span class="order-cat-desc">Order from our collection of published materials</span>
+                                    </div>
+                                </div>
+                                <div class="order-cat-chevron"><i class="fas fa-chevron-down"></i></div>
+                            </button>
+                            <div class="order-cat-body" id="body-books">
+                                <div class="service-selector-grid">
+                                    <label class="service-option" for="opt-preschool"><input type="radio" name="order-service" id="opt-preschool" value="Pre-School Textbooks" /><div class="service-option-card"><i class="fas fa-child"></i><span>Pre-School Textbooks</span></div></label>
+                                    <label class="service-option" for="opt-primary"><input type="radio" name="order-service" id="opt-primary" value="Primary School Textbooks" /><div class="service-option-card"><i class="fas fa-school"></i><span>Primary School Textbooks</span></div></label>
+                                </div>
+                                <div class="order-step-nav cat-step-nav">
+                                    <span class="order-error" id="err-order-service-books"></span>
+                                    <button type="button" class="btn btn-gold" id="order-next-books">Next Step <i class="fas fa-arrow-right"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div><!-- end .order-categories -->
+
+                    <span class="order-error" id="err-order-service"></span>
+                </div>
+
+                <!-- Step 1.5: Book Subject Selection (Only for Book Sales) -->
+                <div class="order-step hidden" id="order-step-1b">
+                    <div class="step-indicator">
+                        <span class="step-badge" id="step-1b-badge">Step 2 of 4</span>
+                        <h4 id="step-1b-title">Select Book Subjects</h4>
+                        <p class="step-sub" id="step-1b-subtitle">Choose the subject(s) you want to order</p>
+                    </div>
+
+                    <!-- Pre-School Subjects (shown when Pre-School Textbooks selected) -->
+                    <div id="preschool-subjects" style="display:none;">
+                        <p class="book-subject-label"><i class="fas fa-child"></i> Pre-School Books</p>
+                        <div class="service-selector-grid book-subject-grid">
+                            <label class="service-option" for="ps-1000words"><input type="checkbox" name="book-subject" id="ps-1000words" value="My First 1000 Words Phases 1, 2 and 3" /><div class="service-option-card"><i class="fas fa-spell-check"></i><span>My First 1000 Words Phases 1, 2 &amp; 3</span></div></label>
+                            <label class="service-option" for="ps-colouring"><input type="checkbox" name="book-subject" id="ps-colouring" value="Combined Colouring for Nursery" /><div class="service-option-card"><i class="fas fa-palette"></i><span>Combined Colouring for Nursery</span></div></label>
+                            <label class="service-option" for="ps-handwriting"><input type="checkbox" name="book-subject" id="ps-handwriting" value="Handwriting for Nursery 1 and 2" /><div class="service-option-card"><i class="fas fa-pen-nib"></i><span>Handwriting for Nursery 1 &amp; 2</span></div></label>
+                            <label class="service-option" for="ps-numeracy"><input type="checkbox" name="book-subject" id="ps-numeracy" value="Numeracy for Nursery 1 and 2" /><div class="service-option-card"><i class="fas fa-calculator"></i><span>Numeracy for Nursery 1 &amp; 2</span></div></label>
+                            <label class="service-option" for="ps-phonics"><input type="checkbox" name="book-subject" id="ps-phonics" value="Phonics for KG 1 and 2" /><div class="service-option-card"><i class="fas fa-microphone"></i><span>Phonics for KG 1 &amp; 2</span></div></label>
+                            <label class="service-option" for="ps-writing"><input type="checkbox" name="book-subject" id="ps-writing" value="Writing for KG 1 and 2" /><div class="service-option-card"><i class="fas fa-pencil-alt"></i><span>Writing for KG 1 &amp; 2</span></div></label>
+                            <label class="service-option" for="ps-numeracy-kg"><input type="checkbox" name="book-subject" id="ps-numeracy-kg" value="Numeracy for KG 1 and 2" /><div class="service-option-card"><i class="fas fa-sort-numeric-up"></i><span>Numeracy for KG 1 &amp; 2</span></div></label>
+                            <label class="service-option" for="ps-lang-lit"><input type="checkbox" name="book-subject" id="ps-lang-lit" value="Language and Literacy KG 1 and 2" /><div class="service-option-card"><i class="fas fa-book-open"></i><span>Language &amp; Literacy KG 1 &amp; 2</span></div></label>
+                            <label class="service-option" for="ps-owop"><input type="checkbox" name="book-subject" id="ps-owop" value="Our World and Our People KG 1 and 2" /><div class="service-option-card"><i class="fas fa-globe-africa"></i><span>Our World &amp; Our People KG 1 &amp; 2</span></div></label>
+                            <label class="service-option" for="ps-creative"><input type="checkbox" name="book-subject" id="ps-creative" value="Creative Arts KG 1 and 2" /><div class="service-option-card"><i class="fas fa-paint-brush"></i><span>Creative Arts KG 1 &amp; 2</span></div></label>
+                            <label class="service-option" for="ps-primer"><input type="checkbox" name="book-subject" id="ps-primer" value="Alpha Primer Reader for KG 2" /><div class="service-option-card"><i class="fas fa-book-reader"></i><span>Alpha Primer Reader for KG 2</span></div></label>
+                        </div>
+                    </div>
+
+                    <!-- Primary School Books (shown when Primary School Textbooks selected) -->
+                    <div id="primary-subjects" style="display:none;">
+                        <p class="book-subject-label"><i class="fas fa-school"></i> Primary School Books</p>
+                        <div class="service-selector-grid book-subject-grid">
+                            <label class="service-option" for="pri-creative-arts"><input type="checkbox" name="book-subject" id="pri-creative-arts" value="Creative Arts Basic 1-6" /><div class="service-option-card"><i class="fas fa-paint-brush"></i><span>Creative Arts Basic 1-6</span></div></label>
+                            <label class="service-option" for="pri-science"><input type="checkbox" name="book-subject" id="pri-science" value="Science Basic 1-6" /><div class="service-option-card"><i class="fas fa-flask"></i><span>Science Basic 1-6</span></div></label>
+                            <label class="service-option" for="pri-phonics"><input type="checkbox" name="book-subject" id="pri-phonics" value="Phonics for Basic 1-4" /><div class="service-option-card"><i class="fas fa-microphone"></i><span>Phonics for Basic 1-4</span></div></label>
+                            <label class="service-option" for="pri-handwriting"><input type="checkbox" name="book-subject" id="pri-handwriting" value="Handwriting for Basic 1-2" /><div class="service-option-card"><i class="fas fa-pen-nib"></i><span>Handwriting for Basic 1-2</span></div></label>
+                        </div>
+                    </div>
+
+                    <span class="order-error" id="err-book-subject"></span>
+                    <div class="order-step-nav">
+                        <button type="button" class="btn btn-outline" id="order-back-1b"><i class="fas fa-arrow-left"></i> Back</button>
+                        <button type="button" class="btn btn-gold" id="order-next-1b">Next Step <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Specifications -->
+                <div class="order-step hidden" id="order-step-2">
+                    <div class="step-indicator">
+                        <span class="step-badge" id="step-2-badge">Step 2 of 3</span>
+                        <h4 id="step-2-title">Order Specifications</h4>
+                    </div>
+
+                    <!-- Book order info banner (shown only for book sales) -->
+                    <div class="book-order-notice" id="book-order-notice" style="display:none;">
+                        <div class="book-notice-icon"><i class="fas fa-book"></i></div>
+                        <div class="book-notice-text">
+                            <strong>Book Order</strong>
+                            <span>Set the quantity for each selected book below.</span>
+                        </div>
+                    </div>
+
+                    <!-- Per-Book Quantity Panel (Book Sales only) -->
+                    <div id="book-qty-panel" style="display:none;">
+                        <div class="book-qty-header">
+                            <i class="fas fa-list-ol"></i>
+                            <span>Set Quantity Per Book</span>
+                        </div>
+                        <div id="book-qty-rows" class="book-qty-rows"></div>
+                        <span class="order-error" id="err-book-quantities"></span>
+                    </div>
+
+                    <!-- ===== SPECIAL ORDER PANEL: GIFAS HERBAL MIXTURE ===== -->
+                    <div id="gifas-specs-panel" class="special-order-panel" style="display:none;">
+                        <div class="book-order-notice" style="display:flex;">
+                            <div class="book-notice-icon"><i class="fas fa-leaf" style="color:var(--gold);"></i></div>
+                            <div class="book-notice-text">
+                                <strong>Gifas Herbal Mixture &mdash; Packaging Order</strong>
+                                <span>Select the product type and specify the quantity of boxes, cards, or labels needed.</span>
+                            </div>
+                        </div>
+                        <!-- Product Type Selector -->
+                        <div class="order-field-group" style="margin-top:18px;">
+                            <label>Product Type <span>*</span></label>
+                            <p class="field-hint" style="margin-bottom:14px;"><i class="fas fa-info-circle"></i> Select which Gifas product you need packaging cards or labels printed for.</p>
+                            <div class="service-selector-grid" style="grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); max-width:420px;">
+                                <label class="service-option" for="gifas-mixture">
+                                    <input type="radio" name="gifas-product" id="gifas-mixture" value="Herbal Mixture" />
+                                    <div class="service-option-card"><i class="fas fa-flask"></i><span>Gifas Herbal Mixture</span></div>
+                                </label>
+                                <label class="service-option" for="gifas-capsules">
+                                    <input type="radio" name="gifas-product" id="gifas-capsules" value="Capsules" />
+                                    <div class="service-option-card"><i class="fas fa-pills"></i><span>Gifas Capsules</span></div>
+                                </label>
+                            </div>
+                            <span class="order-error" id="err-gifas-product"></span>
+                        </div>
+                        <!-- Quantity -->
+                        <div class="order-field-group" style="margin-top:16px; max-width:420px;">
+                            <label for="gifas-quantity">Quantity (Boxes/Cards/Labels) <span>*</span></label>
+                            <div style="display: flex; gap: 10px;">
+                                <input type="number" id="gifas-quantity" name="gifas-quantity" placeholder="e.g. 500" min="1" style="flex: 1;" />
+                                <select id="gifas-pkg-type" name="gifas-pkg-type" style="flex: 0 0 120px; padding: 12px 16px; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; background: rgba(255,255,255,0.05); color: #fff; font-family: var(--font-body); font-size: 0.95rem; outline: none; cursor: pointer;">
+                                    <option value="Boxes" style="color: #000;">Boxes</option>
+                                    <option value="Cards" style="color: #000;">Cards</option>
+                                    <option value="Labels" style="color: #000;">Labels</option>
+                                </select>
+                            </div>
+                            <span class="order-error" id="err-gifas-quantity"></span>
+                        </div>
+                    </div>
+
+                    <!-- ===== SPECIAL ORDER PANEL: TIME HERBAL MIXTURE ===== -->
+                    <div id="timeherbal-specs-panel" class="special-order-panel" style="display:none;">
+                        <div class="book-order-notice" style="display:flex;">
+                            <div class="book-notice-icon"><i class="fas fa-spa" style="color:var(--gold);"></i></div>
+                            <div class="book-notice-text">
+                                <strong>Time Herbal Mixture &mdash; Packaging Order</strong>
+                                <span>Specify the quantity of boxes, cards, or labels needed for your products.</span>
+                            </div>
+                        </div>
+                        <!-- Quantity -->
+                        <div class="order-field-group" style="margin-top:18px; max-width:420px;">
+                            <label for="timeherbal-quantity">Quantity (Boxes/Cards/Labels) <span>*</span></label>
+                            <div style="display: flex; gap: 10px;">
+                                <input type="number" id="timeherbal-quantity" name="timeherbal-quantity" placeholder="e.g. 500" min="1" style="flex: 1;" />
+                                <select id="timeherbal-pkg-type" name="timeherbal-pkg-type" style="flex: 0 0 120px; padding: 12px 16px; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; background: rgba(255,255,255,0.05); color: #fff; font-family: var(--font-body); font-size: 0.95rem; outline: none; cursor: pointer;">
+                                    <option value="Boxes" style="color: #000;">Boxes</option>
+                                    <option value="Cards" style="color: #000;">Cards</option>
+                                    <option value="Labels" style="color: #000;">Labels</option>
+                                </select>
+                            </div>
+                            <span class="order-error" id="err-timeherbal-quantity"></span>
+                        </div>
+                    </div>
+
+                    <div class="order-fields-grid">
+                        <!-- Print-only: Single Quantity -->
+                        <div class="order-field-group" id="field-quantity">
+                            <label for="order-quantity">Quantity <span>*</span></label>
+                            <input type="number" id="order-quantity" name="order-quantity" placeholder="e.g. 50" min="1" />
+                            <span class="order-error" id="err-order-quantity"></span>
+                        </div>
+
+                        <!-- Print-only: Size / Format -->
+                        <div class="order-field-group" id="field-size">
+                            <label for="order-size">Size / Format <span class="label-optional">(Optional)</span></label>
+                            <input type="text" id="order-size" name="order-size" list="size-options" placeholder="e.g. A4, A5, Business Card (85x54mm)" autocomplete="off" />
+                            <datalist id="size-options">
+                                <option value="A3"></option>
+                                <option value="A4"></option>
+                                <option value="A5"></option>
+                                <option value="A6 (Postcard)"></option>
+                                <option value="Business Card (85x54mm)"></option>
+                                <option value="DL (99x210mm)"></option>
+                                <option value="Custom Size"></option>
+                            </datalist>
+                            <p class="field-hint"><i class="fas fa-info-circle"></i> Not sure about the size? Leave this blank &mdash; our team will guide you during follow-up.</p>
+                        </div>
+
+                        <!-- Print-only: Print Finish -->
+                        <div class="order-field-group" id="field-finish">
+                            <label for="order-finish">Print Finish <span class="label-optional">(Optional)</span></label>
+                            <input type="text" id="order-finish" name="order-finish" list="finish-options"
+                                   placeholder="e.g. Gloss, Matte, Spot UV &mdash; or leave blank to enquire" autocomplete="off" />
+                            <datalist id="finish-options">
+                                <option value="Gloss Laminate"></option>
+                                <option value="Matte Laminate"></option>
+                                <option value="Spot UV"></option>
+                                <option value="Gold / Silver Foil"></option>
+                                <option value="Uncoated"></option>
+                                <option value="Soft-Touch Laminate"></option>
+                            </datalist>
+                            <p class="field-hint"><i class="fas fa-info-circle"></i> Not sure which finish suits your project? Leave this blank &mdash; our team will recommend the best option for you.</p>
+                        </div>
+
+                        <!-- Print-only: Color Mode -->
+                        <div class="order-field-group" id="field-color">
+                            <label for="order-color">Color Mode <span>*</span></label>
+                            <input type="text" id="order-color" name="order-color" list="color-options" placeholder="Select or type custom color" autocomplete="off" />
+                            <datalist id="color-options">
+                                <option value="Full Color (CMYK)"></option>
+                                <option value="Black &amp; White"></option>
+                                <option value="Pantone / Spot Color"></option>
+                            </datalist>
+                            <span class="order-error" id="err-order-color"></span>
+                        </div>
+
+                        <div class="order-field-group order-field-full">
+                            <label for="order-deadline" id="label-deadline">Preferred Deadline</label>
+                            <input type="date" id="order-deadline" name="order-deadline" />
+                        </div>
+                        <div class="order-field-group order-field-full">
+                            <label for="order-specs" id="label-specs">Additional Notes</label>
+                            <textarea id="order-specs" name="order-specs" rows="3" placeholder="Any special requirements, delivery instructions, or other notes..."></textarea>
+                        </div>
+
+                        <!-- Print-only: File Upload -->
+                        <div class="order-field-group order-field-full" id="field-file">
+                            <label for="order-file">Design File <span class="label-optional">(Optional)</span></label>
+                            <p class="field-hint"><i class="fas fa-info-circle"></i> Upload your <strong>ready-to-print artwork</strong> or logo. If you don't have a file yet, our design team will help you create one.</p>
+                            <div class="file-drop-zone" id="file-drop-zone">
+                                <input type="file" id="order-file" name="order-file" accept=".pdf,.ai,.psd,.png,.jpg,.jpeg,.eps" hidden />
+                                <div class="file-drop-content" id="file-drop-content">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <p>Drag &amp; drop your file here or <button type="button" class="file-browse-btn" id="file-browse-btn">Browse File</button></p>
+                                    <span>Accepted formats: PDF, AI, PSD, PNG, JPG, EPS &mdash; Max 50MB</span>
+                                </div>
+                                <div class="file-selected" id="file-selected" style="display:none;">
+                                    <i class="fas fa-file-circle-check"></i>
+                                    <span id="file-name-display"></span>
+                                    <button type="button" class="file-remove-btn" id="file-remove-btn" aria-label="Remove file"><i class="fas fa-times"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-step-nav">
+                        <button type="button" class="btn btn-outline" id="order-back-2"><i class="fas fa-arrow-left"></i> Back</button>
+                        <button type="button" class="btn btn-gold" id="order-next-2">Next Step <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Contact Details -->
+                <div class="order-step hidden" id="order-step-3">
+                    <div class="step-indicator">
+                        <span class="step-badge" id="step-3-badge">Step 3 of 3</span>
+                        <h4>Your Contact Details</h4>
+                    </div>
+                    <div class="order-fields-grid">
+                        <div class="order-field-group">
+                            <label for="order-name">Full Name <span>*</span></label>
+                            <input type="text" id="order-name" name="order-name" placeholder="Enter your full name" autocomplete="name" />
+                            <span class="order-error" id="err-order-name"></span>
+                        </div>
+                        <div class="order-field-group">
+                            <label for="order-email">Email Address <span>*</span></label>
+                            <input type="email" id="order-email" name="order-email" placeholder="you@example.com" autocomplete="email" />
+                            <span class="order-error" id="err-order-email"></span>
+                        </div>
+                        <div class="order-field-group">
+                            <label for="order-phone">Phone Number <span>*</span></label>
+                            <input type="tel" id="order-phone" name="order-phone" placeholder="+233 27 360 9207" autocomplete="tel" />
+                            <span class="order-error" id="err-order-phone"></span>
+                        </div>
+                        <div class="order-field-group">
+                            <label for="order-company">Company / Organization</label>
+                            <input type="text" id="order-company" name="order-company" placeholder="Your Business Name (optional)" autocomplete="organization" />
+                        </div>
+                        <div class="order-field-group">
+                            <label for="order-address">Delivery / Physical Address <span>*</span></label>
+                            <input type="text" id="order-address" name="order-address" placeholder="123 Main St, Kumasi" autocomplete="street-address" />
+                            <span class="order-error" id="err-order-address"></span>
+                        </div>
+                        <div class="order-field-group order-field-full">
+                            <label for="order-notes">Order Notes</label>
+                            <textarea id="order-notes" name="order-notes" rows="3" placeholder="Any other information or special requests for this order..."></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Order Summary -->
+                    <div class="order-summary" id="order-summary">
+                        <h5><i class="fas fa-receipt"></i> Order Summary</h5>
+                        <div class="summary-items" id="summary-items"></div>
+                    </div>
+
+                    <div class="order-step-nav">
+                        <button type="button" class="btn btn-outline" id="order-back-3"><i class="fas fa-arrow-left"></i> Back</button>
+                        <button type="submit" class="btn btn-gold" id="order-submit-btn">
+                            <i class="fas fa-paper-plane"></i> Submit Order
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+
+            <!-- Step Progress Bar -->
+            <div class="order-progress" id="order-progress-bar">
+                <div class="progress-step active" data-step="1"><span>1</span><p>Service</p></div>
+                <div class="progress-line" id="progress-line-1"></div>
+                <div class="progress-step" data-step="1b" id="progress-step-1b" style="display:none;"><span>2</span><p>Subjects</p></div>
+                <div class="progress-line" id="progress-line-1b" style="display:none;"></div>
+                <div class="progress-step" data-step="2" id="progress-step-2"><span>2</span><p>Specs</p></div>
+                <div class="progress-line" id="progress-line-2"></div>
+                <div class="progress-step" data-step="3" id="progress-step-3"><span>3</span><p>Contact</p></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== ORDER SUCCESS MODAL ========== -->
+    <div class="order-modal" id="order-modal" role="dialog" aria-modal="true" aria-labelledby="order-modal-title">
+        <div class="order-modal-backdrop" id="order-modal-backdrop"></div>
+        <div class="order-modal-content">
+            <div class="order-modal-icon"><i class="fas fa-check-circle"></i></div>
+            <h3 id="order-modal-title">Order Prepared Successfully!</h3>
+            <p id="order-modal-desc" style="margin-bottom: 18px;">Your order has been formatted and redirected to our WhatsApp. <br><span style="color:var(--gold); font-weight:600;">Simply hit send in WhatsApp to submit it to our team.</span></p>
+            
+            <div class="order-modal-ref" style="margin-bottom: 12px;">
+                <span>Order Reference ID:</span>
+                <strong id="order-ref-number"></strong>
+            </div>
+
+            <div class="order-modal-security-note" style="margin-bottom: 28px; padding: 12px 16px; background: rgba(247, 195, 37, 0.08); border: 1px solid rgba(247, 195, 37, 0.2); border-radius: 8px; font-size: 0.88rem; color: #e2e8f0; text-align: center; line-height: 1.5;">
+                <i class="fas fa-lock" style="color: var(--gold); margin-right: 6px;"></i> <strong>Security Notice:</strong> Please keep your Order Reference ID secured. It will be required to track your order progress and verify your identity.
+            </div>
+            <div class="order-modal-actions">
+                <button class="btn btn-gold" id="order-modal-close">
+                    <i class="fas fa-home"></i> Back to Home
+                </button>
+                <a href="https://wa.me/233267621569" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer" id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="index.html" class="footer-logo">
+                            <img src="Alpha logo.jpg" alt="Alpha &amp; Omega Publications Limited" class="logo-img footer-logo-img" loading="lazy" width="220" height="80">
+                        </a>
+                        <p>Your trusted partner for all professional printing and publishing needs. Quality you can see, service you can feel.</p>
+                        <div class="footer-social">
+                            <a href="https://wa.me/233267621569" class="footer-wa-icon" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/nana-kwaku-akuoko-a770a5404?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_android" class="dev-linkedin-icon" aria-label="Developer LinkedIn" target="_blank" rel="noopener noreferrer" title="Website Developer">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer-links-col">
+                        <h5>Quick Links</h5>
+                        <ul>
+                            <li><a href="index.html"><i class="fas fa-angle-right"></i> Home</a></li>
+                            <li><a href="about.html"><i class="fas fa-angle-right"></i> About Us</a></li>
+                            <li><a href="services.html"><i class="fas fa-angle-right"></i> Services</a></li>
+                            <li><a href="portfolio.html"><i class="fas fa-angle-right"></i> Portfolio</a></li>
+                            <li><a href="contact.html"><i class="fas fa-angle-right"></i> Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-col">
+                        <h5>Our Services</h5>
+                        <ul>
+                            <li><a href="services.html"><i class="fas fa-angle-right"></i> Book Printing</a></li>
+                            <li><a href="services.html"><i class="fas fa-angle-right"></i> Flyers &amp; Posters</a></li>
+                            <li><a href="services.html"><i class="fas fa-angle-right"></i> Business Cards</a></li>
+                            <li><a href="services.html"><i class="fas fa-angle-right"></i> Banners &amp; Stickers</a></li>
+                            <li><a href="services.html"><i class="fas fa-angle-right"></i> Custom Printing</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact-col">
+                        <h5>Contact Info</h5>
+                        <ul>
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <a href="https://www.google.com/maps/search/Alpha+and+Omega+Publications+Asafo+Kumasi+Ghana"
+                                   target="_blank" rel="noopener noreferrer" class="footer-map-link">
+                                    BH 41, Asafo Labour Roundabout, Kumasi, Ghana
+                                </a>
+                            </li>
+                            <li><i class="fas fa-phone-alt"></i> <a href="tel:+233267621569">+233 26 762 1569</a>, <a href="tel:+233273609207">+233 27 360 9207</a></li>
+                            <li><i class="fas fa-envelope"></i> <a href="mailto:alphaandomegapublications@gmail.com">alphaandomegapublications@gmail.com</a></li>
+                            <li><i class="fas fa-clock"></i> Mon &ndash; Fri: 8AM &ndash; 5PM | Sat: 8AM &ndash; 2PM</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-flex">
+                    <p>&copy; <span id="footer-year"></span> Alpha &amp; Omega Publications. All rights reserved.</p>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a class="whatsapp-float" href="https://wa.me/233267621569" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <button class="scroll-top" id="scroll-top-btn" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="background.js" defer></script>
+    <script src="script.js" defer></script>
+
+    <script src="order.js" defer></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

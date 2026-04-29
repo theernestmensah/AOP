@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <!-- ── Session guard: always enter the site via the homepage ── -->
+    <script>
+    (function () {
+        var HOME = 'index.html';
+        var page = location.pathname.split('/').pop() || '';
+        var isHome = (page === HOME || page === '' || page === '/');
+        if (!sessionStorage.getItem('aop_session')) {
+            if (!isHome) { location.replace(HOME); }
+            else { sessionStorage.setItem('aop_session', '1'); }
+        }
+    }());
+    </script>
+    <meta name="viewport" content="width=1280" />
+    <meta name="description"
+        content="Alpha And Omega Publications Portfolio &mdash; See our print work including book printing, business cards, banners, posters, magazines, and custom products in Kumasi, Ghana." />
+    <meta name="keywords"
+        content="printing portfolio, book printing samples, business cards, banners, custom print, Kumasi Ghana, Alpha And Omega Publications" />
+    <meta name="theme-color" content="#151b29" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Alpha &amp; Omega Publications" />
+    <meta property="og:title" content="Portfolio | Alpha &amp; Omega Publications" />
+    <meta property="og:description" content="Explore a curated gallery of our printing work across education, packaging, and corporate branding." />
+    <meta property="og:url" content="https://alphaandomegapublications.com/portfolio.html" />
+    <meta property="og:image" content="Alpha logo.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://alphaandomegapublications.com/portfolio.html" />
+    <link rel="icon" type="image/jpeg" href="Alpha logo.jpg" />
+    <title>Portfolio | Alpha &amp; Omega Publications &mdash; Print Work Gallery</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="patch.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+    <!-- ========== PRELOADER ========== -->
+    <div id="preloader">
+        <div class="preloader-inner">
+            <img src="Alpha logo.jpg" alt="Loading Alpha &amp; Omega Publications" class="preloader-img" width="260" height="140">
+            <div class="preloader-spinner"></div>
+        </div>
+    </div>
+
+    <!-- ========== HEADER / NAVBAR ========== -->
+    <header id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo" id="nav-logo">
+                <img
+                    src="Alpha logo.jpg"
+                    alt="Alpha &amp; Omega Publications Limited"
+                    class="logo-img"
+                    loading="eager"
+                width="220" height="80">
+            </a>
+            <nav class="nav-links" id="nav-links">
+                <a href="index.html" class="nav-link" id="link-home">Home</a>
+                <a href="about.html" class="nav-link" id="link-about">About Us</a>
+                <a href="services.html" class="nav-link" id="link-services">Services</a>
+                <a href="portfolio.html" class="nav-link active" id="link-portfolio">Portfolio</a>
+                <a href="contact.html" class="nav-link" id="link-contact">Contact</a>
+                <a href="order.html" class="nav-cta" id="nav-quote-btn">Order Now</a>
+            </nav>
+            <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+
+    <!-- Page Hero Banner -->
+    <div class="page-hero" style="position: relative;">
+        <!-- Slideshow Background -->
+        <div class="hero-slideshow">
+            <div class="hero-slide" style="background-image: url('craftsmanship1.jpg');"></div>
+            <div class="hero-slide" style="background-image: url('craftsmanship2.jpg');"></div>
+            <div class="hero-slide" style="background-image: url('craftsmanship3.jpg');"></div>
+            <div class="hero-slide" style="background-image: url('craftsmanship4.jpg');"></div>
+            <div class="hero-slide" style="background-image: url('craftsmanship5.jpg');"></div>
+        </div>
+        <div class="page-hero-particles"></div>
+        <div class="page-hero-content" style="z-index:2; position:relative;">
+            <p class="section-label">Our Craftsmanship</p>
+            <h1 class="page-hero-title">Portfolio <span class="gold-text">&amp; Process</span></h1>
+            <p class="page-hero-desc">Discover what we do, how we achieve it, and the print excellence we deliver across Ghana.</p>
+        </div>
+    </div>
+
+    <!-- ========== WHAT WE DO ========== -->
+    <section class="wwd-section section" id="what-we-do">
+        <div class="container">
+            <div class="section-header" data-aos>
+                <p class="section-label">Our Expertise</p>
+                <h2 class="section-title">What <span class="gold-text">We Do</span></h2>
+                <div class="section-line"></div>
+                <p class="section-desc">We transform ideas into tangible assets. From brilliant brand packaging to striking large-format banners, we offer an impressive array of premium print solutions.</p>
+            </div>
+            
+            <div class="wwd-grid">
+                <div class="wwd-card" data-aos>
+                    <div class="wwd-icon"><i class="fas fa-book-open"></i></div>
+                    <h3>Book Publishing</h3>
+                    <p>Professional formatting, high-quality paper stocks, and perfect binding for textbooks, magazines, and novels.</p>
+                </div>
+                <div class="wwd-card" data-aos>
+                    <div class="wwd-icon"><i class="fas fa-box-open"></i></div>
+                    <h3>Custom Packaging</h3>
+                    <p>Bespoke product boxes and packaging designed to elevate your brand identity and protect your merchandise.</p>
+                </div>
+                <div class="wwd-card" data-aos>
+                    <div class="wwd-icon"><i class="fas fa-id-card"></i></div>
+                    <h3>Marketing Materials</h3>
+                    <p>Premium business cards, flyers, and brochures that leave a lasting impression on your clients.</p>
+                </div>
+                <div class="wwd-card" data-aos>
+                    <div class="wwd-icon"><i class="fas fa-image"></i></div>
+                    <h3>Large Format</h3>
+                    <p>Striking banners, posters, and stage designs that command attention in any indoor or outdoor setting.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== HOW WE GET IT DONE ========== -->
+    <section class="process-section section" id="process">
+        <div class="container">
+            <div class="section-header" data-aos>
+                <p class="section-label">Our Workflow</p>
+                <h2 class="section-title">How We <span class="gold-text">Get It Done</span></h2>
+                <div class="section-line"></div>
+                <p class="section-desc">A seamless, meticulous process ensuring millionaire-quality perfection from the first pixel to the final print.</p>
+            </div>
+
+            <div class="process-timeline">
+                <div class="process-step" data-aos>
+                    <div class="process-img-wrap">
+                        <img src="design1.jpg" alt="Design and Consultation" loading="lazy" id="portfolio-design-img">
+                        <div class="step-num">01</div>
+                    </div>
+                    <div class="process-info">
+                        <h3>Design &amp; Consultation</h3>
+                        <p>We start by understanding your vision. Our expert design team collaborates with you to create stunning visuals and layouts that perfectly align with your brand identity.</p>
+                    </div>
+                </div>
+
+                <div class="process-step reverse" data-aos>
+                    <div class="process-img-wrap">
+                        <img src="prepress1.jpg" alt="Pre-Press Preparation" loading="lazy" id="portfolio-prepress-img">
+                        <div class="step-num">02</div>
+                    </div>
+                    <div class="process-info">
+                        <h3>Pre-Press Review</h3>
+                        <p>Every file undergoes rigorous pre-press checks. We ensure perfect color calibration, layout alignment, and exact specifications before any ink meets the press.</p>
+                    </div>
+                </div>
+
+                <div class="process-step" data-aos>
+                    <div class="process-img-wrap">
+                        <img src="finalp.jpg" alt="Finishing and Delivery" loading="lazy" id="portfolio-finish-img">
+                        <div class="step-num">03</div>
+                    </div>
+                    <div class="process-info">
+                        <h3>Finishing &amp; Delivery</h3>
+                        <p>From die-cutting to elegant foil stamping and perfect binding, the final touches are applied meticulously before your products are safely packaged and delivered.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PORTFOLIO GALLERY ========== -->
+    <section class="portfolio section" id="portfolio-gallery">
+        <div class="container">
+            <div class="section-header" data-aos>
+                <p class="section-label">Selected Works</p>
+                <h2 class="section-title">Print <span class="gold-text">Excellence</span> Showcased</h2>
+                <div class="section-line"></div>
+                <p class="section-desc">Filter by category to explore our range of elite print productions.</p>
+            </div>
+
+            <div class="portfolio-filters" data-aos>
+                <button class="filter-btn active" data-filter="all" id="filter-all">All</button>
+                <button class="filter-btn" data-filter="books" id="filter-books">Books</button>
+                <button class="filter-btn" data-filter="marketing" id="filter-marketing">Marketing</button>
+            </div>
+
+            <div class="portfolio-grid" id="portfolio-grid">
+
+
+                <div class="portfolio-item product-showcase" data-category="books marketing" data-aos>
+                    <div class="product-img-wrap">
+                    <img src="alpha_words_phase3.png" alt="Alpha My First 1000 Words Phase 3" loading="lazy" />
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-info">
+                            <h4>Alpha My First 1000 Words Phase 3</h4>
+                            <p>Educational Books</p>
+                            <button class="portfolio-zoom"
+                                data-img="alpha_words_phase3.png"
+                                data-title="Alpha My First 1000 Words Phase 3" aria-label="View full image">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item product-showcase" data-category="books marketing" data-aos>
+                    <div class="product-img-wrap">
+                    <img src="alpha_numeracy_kg2.png" alt="Alpha Numeracy KG 2" loading="lazy" />
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-info">
+                            <h4>Alpha Numeracy KG 2</h4>
+                            <p>Educational Books</p>
+                            <button class="portfolio-zoom"
+                                data-img="alpha_numeracy_kg2.png"
+                                data-title="Alpha Numeracy KG 2" aria-label="View full image">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item product-showcase" data-category="books marketing" data-aos>
+                    <div class="product-img-wrap">
+                    <img src="alpha_words_phase2.png" alt="Alpha My First 1000 Words Phase 2" loading="lazy" />
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-info">
+                            <h4>Alpha My First 1000 Words Phase 2</h4>
+                            <p>Educational Books</p>
+                            <button class="portfolio-zoom"
+                                data-img="alpha_words_phase2.png"
+                                data-title="Alpha My First 1000 Words Phase 2" aria-label="View full image">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item product-showcase" data-category="books marketing" data-aos>
+                    <div class="product-img-wrap">
+                    <img src="alpha_world_kg1.png" alt="Alpha Our World And Our People KG 1" loading="lazy" />
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-info">
+                            <h4>Alpha Our World And Our People KG 1</h4>
+                            <p>Educational Books</p>
+                            <button class="portfolio-zoom"
+                                data-img="alpha_world_kg1.png"
+                                data-title="Alpha Our World And Our People KG 1" aria-label="View full image">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item product-showcase" data-category="books marketing" data-aos>
+                    <div class="product-img-wrap">
+                    <img src="alpha_world_people_bk6.png" alt="Alpha Our World And Our People Learners' Book 6" loading="lazy" />
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-info">
+                            <h4>Alpha Our World And Our People 6</h4>
+                            <p>Educational Books</p>
+                            <button class="portfolio-zoom"
+                                data-img="alpha_world_people_bk6.png"
+                                data-title="Alpha Our World And Our People Learners' Book 6" aria-label="View full image">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item product-showcase" data-category="books marketing" data-aos>
+                    <div class="product-img-wrap">
+                    <img src="alpha_world_people_bk2.png" alt="Alpha Our World And Our People Learners' Book 2" loading="lazy" />
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-info">
+                            <h4>Alpha Our World And Our People 2</h4>
+                            <p>Educational Books</p>
+                            <button class="portfolio-zoom"
+                                data-img="alpha_world_people_bk2.png"
+                                data-title="Alpha Our World And Our People Learners' Book 2" aria-label="View full image">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item product-showcase" data-category="books marketing" data-aos>
+                    <div class="product-img-wrap">
+                    <img src="alpha_creative_arts_bk4.png" alt="Alpha Creative Arts Learners' Book 4" loading="lazy" />
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-info">
+                            <h4>Alpha Creative Arts 4</h4>
+                            <p>Educational Books</p>
+                            <button class="portfolio-zoom"
+                                data-img="alpha_creative_arts_bk4.png"
+                                data-title="Alpha Creative Arts Learners' Book 4" aria-label="View full image">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item product-showcase" data-category="books marketing" data-aos>
+                    <div class="product-img-wrap">
+                    <img src="alpha_creative_arts_bk2.png" alt="Alpha Creative Arts Learners' Book 2" loading="lazy" />
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-info">
+                            <h4>Alpha Creative Arts 2</h4>
+                            <p>Educational Books</p>
+                            <button class="portfolio-zoom"
+                                data-img="alpha_creative_arts_bk2.png"
+                                data-title="Alpha Creative Arts Learners' Book 2" aria-label="View full image">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item product-showcase" data-category="books marketing" data-aos>
+                    <div class="product-img-wrap">
+                    <img src="alpha_phonics_phase1.png" alt="Alpha Phonics Phase 1" loading="lazy" />
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-info">
+                            <h4>Alpha Phonics Phase 1</h4>
+                            <p>Educational Books</p>
+                            <button class="portfolio-zoom"
+                                data-img="alpha_phonics_phase1.png"
+                                data-title="Alpha Phonics Phase 1" aria-label="View full image">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Portfolio CTA -->
+            <div class="services-cta-banner" data-aos style="margin-top:64px;">
+                <div class="services-cta-inner">
+                    <div>
+                        <h3>Like What You See?</h3>
+                        <p>Let's bring your print vision to life. Get a free quote today.</p>
+                    </div>
+                    <div class="services-cta-btns">
+                        <a href="order.html" class="btn btn-gold">Place an Order</a>
+                        <a href="https://wa.me/233267621569" class="wa-contact-btn" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Lightbox -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+        <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightbox-close" aria-label="Close image viewer"><i class="fas fa-times"></i></button>
+            <img src="" alt="" id="lightbox-img" />
+            <p id="lightbox-title"></p>
+        </div>
+    </div>
+    <!-- ========== TRUSTED PARTNERS ========== -->
+    <section class="partners-section" id="partners">
+        <div class="container">
+            <div class="section-header" data-aos>
+                <p class="section-label">Trusted By The Best</p>
+                <h2 class="section-title">Our Proud <span class="gold-text">Partners &amp; Clients</span></h2>
+                <div class="section-line"></div>
+                <p class="section-desc">Brands and institutions across Ghana that trust us to deliver print excellence.</p>
+            </div>
+
+            <!-- Logo-only wall -->
+            <div class="logo-wall" data-aos>
+                <div class="logo-tile" id="partner-gifas">
+                    <img src="gifas.jpeg" alt="Gifas Mixture" />
+                    <span class="logo-tooltip">Gifas Mixture</span>
+                </div>
+                <div class="logo-tile" id="partner-bestman">
+                    <img src="bestman.jpeg" alt="Bestman Capsules" />
+                    <span class="logo-tooltip">Bestman Capsules</span>
+                </div>
+                <div class="logo-tile" id="partner-gcu">
+                    <img src="gcu.jpeg" alt="Garden City University" />
+                    <span class="logo-tooltip">Garden City University</span>
+                </div>
+                <div class="logo-tile" id="partner-kumawuman">
+                    <img src="kumawumanrbplc.jpeg" alt="Kumawuman Rural Bank" />
+                    <span class="logo-tooltip">Kumawuman Rural Bank</span>
+                </div>
+                <div class="logo-tile" id="partner-tradewinds">
+                    <img src="tradewinds.jpeg" alt="Tradewinds" />
+                    <span class="logo-tooltip">Tradewinds</span>
+                </div>
+                <div class="logo-tile" id="partner-timeherbal">
+                    <img src="timeherbal.jpeg" alt="Time Herbal" />
+                    <span class="logo-tooltip">Time Herbal</span>
+                </div>
+            </div>
+
+            <!-- Trust strip -->
+            <div class="trust-bar" data-aos>
+                <div class="trust-stat"><i class="fas fa-building"></i><span>50+ Corporate Clients</span></div>
+                <div class="trust-divider"></div>
+                <div class="trust-stat"><i class="fas fa-university"></i><span>15+ Educational Institutions</span></div>
+                <div class="trust-divider"></div>
+                <div class="trust-stat"><i class="fas fa-handshake"></i><span>30+ Years of Partnerships</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer" id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="index.html" class="footer-logo">
+                            <img src="Alpha logo.jpg"
+                                alt="Alpha &amp; Omega Publications Limited" class="logo-img footer-logo-img" loading="lazy" width="220" height="80">
+                        </a>
+                        <p>Your trusted partner for all professional printing and publishing needs. Quality you can see, service you can feel.</p>
+                        <div class="footer-social">
+                            <a href="https://wa.me/233267621569" class="footer-wa-icon" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/nana-kwaku-akuoko-a770a5404?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_android" class="dev-linkedin-icon" aria-label="Developer LinkedIn" target="_blank" rel="noopener noreferrer" title="Website Developer">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer-links-col">
+                        <h5>Quick Links</h5>
+                        <ul>
+                            <li><a href="index.html"><i class="fas fa-angle-right"></i> Home</a></li>
+                            <li><a href="about.html"><i class="fas fa-angle-right"></i> About Us</a></li>
+                            <li><a href="services.html"><i class="fas fa-angle-right"></i> Services</a></li>
+                            <li><a href="portfolio.html"><i class="fas fa-angle-right"></i> Portfolio</a></li>
+                            <li><a href="contact.html"><i class="fas fa-angle-right"></i> Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-col">
+                        <h5>Our Services</h5>
+                        <ul>
+                            <li><a href="services.html"><i class="fas fa-angle-right"></i> Book Printing</a></li>
+                            <li><a href="services.html"><i class="fas fa-angle-right"></i> Flyers &amp; Posters</a></li>
+                            <li><a href="services.html"><i class="fas fa-angle-right"></i> Business Cards</a></li>
+                            <li><a href="services.html"><i class="fas fa-angle-right"></i> Banners &amp; Stickers</a></li>
+                            <li><a href="services.html"><i class="fas fa-angle-right"></i> Custom Printing</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact-col">
+                        <h5>Contact Info</h5>
+                        <ul>
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <a href="https://www.google.com/maps/search/Alpha+and+Omega+Publications+Asafo+Kumasi+Ghana"
+                                   target="_blank" rel="noopener noreferrer" class="footer-map-link">
+                                    BH 41, Asafo Labour Roundabout, Kumasi, Ghana
+                                </a>
+                            </li>
+                            <li><i class="fas fa-phone-alt"></i> <a href="tel:+233267621569">+233 26 762 1569</a>, <a href="tel:+233273609207">+233 27 360 9207</a></li>
+                            <li><i class="fas fa-envelope"></i> <a
+                                    href="mailto:alphaandomegapublications@gmail.com">alphaandomegapublications@gmail.com</a>
+                            </li>
+                            <li><i class="fas fa-clock"></i> Mon &ndash; Fri: 8AM &ndash; 5PM | Sat: 8AM &ndash; 2PM
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-flex">
+                    <p>&copy; <span id="footer-year"></span> Alpha &amp; Omega Publications. All rights reserved.</p>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a class="whatsapp-float" href="https://wa.me/233267621569" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scroll-to-top Button -->
+    <button class="scroll-top" id="scroll-top-btn" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="background.js" defer></script>
+    <script src="script.js" defer></script>
+</body>
+</html>
+
+
+
+
+
+
+
