@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <!-- ── Session guard: always enter the site via the homepage ── -->
+    <script>
+    (function () {
+        var HOME = 'index.html';
+        var page = location.pathname.split('/').pop() || '';
+        var isHome = (page === HOME || page === '' || page === '/');
+        if (!sessionStorage.getItem('aop_session')) {
+            // First visit in this browser session
+            if (!isHome) {
+                // Not on homepage → redirect there immediately
+                location.replace(HOME);
+            } else {
+                // Already on homepage → mark session as entered
+                sessionStorage.setItem('aop_session', '1');
+            }
+        }
+        // Session already active (refresh / internal nav) → stay on current page
+    }());
+    </script>
+    <meta name="viewport" content="width=1280" />
+    <meta name="description"
+        content="Alpha And Omega Publications &mdash; Professional printing and publishing services including book printing, flyers, banners, business cards, and custom printing solutions in Kumasi, Ghana." />
+    <meta name="keywords"
+        content="printing, publishing, book printing, flyers, banners, business cards, custom printing, Alpha And Omega Publications" />
+    <meta name="theme-color" content="#151b29" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Alpha &amp; Omega Publications" />
+    <meta property="og:title" content="Alpha &amp; Omega Publications | Professional Printing &amp; Publishing" />
+    <meta property="og:description" content="Premium printing and publishing services in Kumasi for schools, businesses, and institutions." />
+    <meta property="og:url" content="https://alphaandomegapublications.com/index.html" />
+    <meta property="og:image" content="Alpha logo.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://alphaandomegapublications.com/index.html" />
+    <link rel="icon" type="image/jpeg" href="Alpha logo.jpg" />
+    <title>Alpha And Omega Publications | Professional Printing &amp; Publishing</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="patch.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+
+    <!-- ========== PRELOADER ========== -->
+    <div id="preloader">
+        <div class="preloader-inner">
+            <img src="Alpha logo.jpg" alt="Loading Alpha &amp; Omega Publications" class="preloader-img" width="260" height="140">
+            <div class="preloader-spinner"></div>
+        </div>
+    </div>
+
+    <!-- ========== HEADER / NAVBAR ========== -->
+    <header id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo" id="nav-logo">
+                <img src="Alpha logo.jpg"
+                    alt="Alpha &amp; Omega Publications Limited" class="logo-img" loading="eager" width="220" height="80">
+            </a>
+
+            <nav class="nav-links" id="nav-links">
+                <a href="index.html" class="nav-link active" id="link-home">Home</a>
+                <a href="about.html" class="nav-link" id="link-about">About Us</a>
+                <a href="services.html" class="nav-link" id="link-services">Services</a>
+                <a href="portfolio.html" class="nav-link" id="link-portfolio">Portfolio</a>
+                <a href="contact.html" class="nav-link" id="link-contact">Contact</a>
+                <a href="order.html" class="nav-cta" id="nav-quote-btn">Order Now</a>
+            </nav>
+
+            <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero" id="home">
+        <div class="hero-bg slideshow-container" id="hero-bg">
+            <div class="hero-slide slide-1"></div>
+            <div class="hero-slide slide-2"></div>
+            <div class="hero-slide slide-3"></div>
+            <div class="hero-slide slide-4"></div>
+            <div class="hero-slide slide-5"></div>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-particles" id="hero-particles"></div>
+
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-award"></i>
+                <span>Trusted Since 1996 &mdash; 30+ Years of Excellence</span>
+            </div>
+            <h1 class="hero-title">
+                High Quality <span class="gold-text">Printing</span><br />
+                &amp; Publishing Services
+            </h1>
+            <p class="hero-desc">
+                Alpha &amp; Omega Publications delivers premium print solutions tailored for businesses, schools, and
+                individuals. From business cards to large-format banners &mdash; we bring your vision to life, precisely and beautifully.
+            </p>
+            <div class="hero-actions">
+                <a href="contact.html" class="btn btn-gold" id="hero-quote-btn">
+                    <i class="fas fa-envelope-open-text"></i> Get a Free Quote
+                </a>
+                <a href="services.html" class="btn btn-outline" id="hero-services-btn">
+                    <i class="fas fa-print"></i> Our Services
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat" id="stat-projects">
+                    <span class="stat-num" data-target="5000">0</span><span class="stat-plus">+</span>
+                    <p>Projects Completed</p>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat" id="stat-clients">
+                    <span class="stat-num" data-target="1200">0</span><span class="stat-plus">+</span>
+                    <p>Happy Clients</p>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat" id="stat-years">
+                    <span class="stat-num" data-target="30">0</span><span class="stat-plus">+</span>
+                    <p>Years Experience</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-scroll-indicator">
+            <span>Scroll Down</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- ========== MARQUEE STRIP ========== -->
+    <div class="marquee-strip">
+        <div class="marquee-track">
+            <span><i class="fas fa-id-card"></i> Business Cards</span>
+            <span class="marquee-sep">&#9670;</span>
+            <span><i class="fas fa-calendar-alt"></i> Calendars</span>
+            <span class="marquee-sep">&#9670;</span>
+            <span><i class="fas fa-envelope-open"></i> Envelopes</span>
+            <span class="marquee-sep">&#9670;</span>
+            <span><i class="fas fa-book"></i> Exercise Books</span>
+            <span class="marquee-sep">&#9670;</span>
+            <span><i class="fas fa-tags"></i> Labels</span>
+            <span class="marquee-sep">&#9670;</span>
+            <span><i class="fas fa-book-open"></i> Magazines</span>
+            <span class="marquee-sep">&#9670;</span>
+            <span><i class="fas fa-box-open"></i> Packaging</span>
+            <span class="marquee-sep">&#9670;</span>
+            <span><i class="fas fa-image"></i> Posters</span>
+            <span class="marquee-sep">&#9670;</span>
+            <span><i class="fas fa-book-reader"></i> Textbooks</span>
+            <!-- Duplicate for seamless scrolling -->
+            <span><i class="fas fa-id-card"></i> Business Cards</span>
+            <span class="marquee-sep">&#9670;</span>
+            <span><i class="fas fa-calendar-alt"></i> Calendars</span>
+            <span class="marquee-sep">&#9670;</span>
+            <span><i class="fas fa-envelope-open"></i> Envelopes</span>
+            <span class="marquee-sep">&#9670;</span>
+            <span><i class="fas fa-book"></i> Exercise Books</span>
+            <span class="marquee-sep">&#9670;</span>
+            <span><i class="fas fa-tags"></i> Labels</span>
+            <span class="marquee-sep">&#9670;</span>
+            <span><i class="fas fa-book-open"></i> Magazines</span>
+            <span class="marquee-sep">&#9670;</span>
+            <span><i class="fas fa-box-open"></i> Packaging</span>
+            <span class="marquee-sep">&#9670;</span>
+            <span><i class="fas fa-image"></i> Posters</span>
+            <span class="marquee-sep">&#9670;</span>
+            <span><i class="fas fa-book-reader"></i> Textbooks</span>
+        </div>
+    </div>
+
+    <!-- ========== WHY CHOOSE US (teaser on home) ========== -->
+    <section class="why-us section" id="why-us">
+        <div class="container">
+            <div class="section-header" data-aos>
+                <p class="section-label">Our Advantage</p>
+                <h2 class="section-title">Why Choose <span class="gold-text">Us?</span></h2>
+                <div class="section-line"></div>
+                <p class="section-desc">30+ years of craftsmanship, technology, and passion for print excellence.</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-card" data-aos id="why-quality">
+                    <div class="why-icon"><i class="fas fa-gem"></i></div>
+                    <h4>Unmatched Quality</h4>
+                    <p>Only premium inks and materials on the latest digital and offset presses.</p>
+                </div>
+                <div class="why-card" data-aos id="why-speed">
+                    <div class="why-icon"><i class="fas fa-bolt"></i></div>
+                    <h4>Fast Delivery</h4>
+                    <p>Rush and standard turnaround options. We always deliver on time.</p>
+                </div>
+                <div class="why-card" data-aos id="why-price">
+                    <div class="why-icon"><i class="fas fa-tags"></i></div>
+                    <h4>Best Pricing</h4>
+                    <p>Competitive, transparent pricing. Volume discounts for bulk orders.</p>
+                </div>
+                <div class="why-card" data-aos id="why-support">
+                    <div class="why-icon"><i class="fas fa-headset"></i></div>
+                    <h4>Expert Support</h4>
+                    <p>Our team guides you from design concept through final delivery.</p>
+                </div>
+            </div>
+            <div class="why-cta-wrap" data-aos>
+                <a href="about.html" class="btn btn-outline"><i class="fas fa-arrow-right"></i> Learn More About Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CTA STRIP ========== -->
+    <section class="section home-cta-section" id="home-cta">
+        <div class="container">
+            <div class="services-cta-banner" data-aos>
+                <div class="services-cta-inner">
+                    <div>
+                        <h3>Ready to Start Your Print Project?</h3>
+                        <p>Get a free quote within 24 hours. No obligations.</p>
+                    </div>
+                    <div class="services-cta-btns">
+                        <a href="order.html" class="btn btn-gold">Place an Order</a>
+                        <a href="https://wa.me/233267621569" class="wa-contact-btn" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer" id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="index.html" class="footer-logo">
+                            <img src="Alpha logo.jpg"
+                                alt="Alpha &amp; Omega Publications Limited" class="logo-img footer-logo-img" loading="lazy" width="220" height="80">
+                        </a>
+                        <p>Your trusted partner for all professional printing and publishing needs. Quality you can see, service you can feel.</p>
+                        <div class="footer-social">
+                            <a href="https://wa.me/233267621569" class="footer-wa-icon" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/nana-kwaku-akuoko-a770a5404?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_android" class="dev-linkedin-icon" aria-label="Developer LinkedIn" target="_blank" rel="noopener noreferrer" title="Website Developer">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="footer-links-col">
+                        <h5>Quick Links</h5>
+                        <ul>
+                            <li><a href="index.html"><i class="fas fa-angle-right"></i> Home</a></li>
+                            <li><a href="about.html"><i class="fas fa-angle-right"></i> About Us</a></li>
+                            <li><a href="services.html"><i class="fas fa-angle-right"></i> Services</a></li>
+                            <li><a href="portfolio.html"><i class="fas fa-angle-right"></i> Portfolio</a></li>
+                            <li><a href="contact.html"><i class="fas fa-angle-right"></i> Contact Us</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-links-col">
+                        <h5>Our Services</h5>
+                        <ul>
+                            <li><a href="services.html"><i class="fas fa-angle-right"></i> Book Printing</a></li>
+                            <li><a href="services.html"><i class="fas fa-angle-right"></i> Flyers &amp; Posters</a></li>
+                            <li><a href="services.html"><i class="fas fa-angle-right"></i> Business Cards</a></li>
+                            <li><a href="services.html"><i class="fas fa-angle-right"></i> Banners &amp; Stickers</a></li>
+                            <li><a href="services.html"><i class="fas fa-angle-right"></i> Custom Printing</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-contact-col">
+                        <h5>Contact Info</h5>
+                        <ul>
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <a href="https://www.google.com/maps/search/Alpha+and+Omega+Publications+Asafo+Kumasi+Ghana"
+                                   target="_blank" rel="noopener noreferrer" class="footer-map-link">
+                                    BH 41, Asafo Labour Roundabout, Kumasi, Ghana
+                                </a>
+                            </li>
+                            <li><i class="fas fa-phone-alt"></i> <a href="tel:+233267621569">+233 26 762 1569</a>, <a href="tel:+233273609207">+233 27 360 9207</a></li>
+                            <li><i class="fas fa-envelope"></i> <a href="mailto:alphaandomegapublications@gmail.com">alphaandomegapublications@gmail.com</a></li>
+                            <li><i class="fas fa-clock"></i> Mon &ndash; Fri: 8AM &ndash; 5PM | Sat: 8AM &ndash; 2PM</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-flex">
+                    <p>&copy; <span id="footer-year"></span> Alpha &amp; Omega Publications. All rights reserved.</p>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a class="whatsapp-float" href="https://wa.me/233267621569" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scroll-to-top Button -->
+    <button class="scroll-top" id="scroll-top-btn" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="background.js" defer></script>
+    <script src="script.js" defer></script>
+</body>
+</html>
