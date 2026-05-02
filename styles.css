@@ -3704,3 +3704,24 @@ body.hide-default-cursor * {
     animation-duration: 25s; /* Speed up a bit for mobile but keep it smooth */
   }
 }
+
+@media (max-width: 768px) {
+  .review-wall {
+    padding: 10px 0;
+  }
+  .review-track {
+    animation-duration: 35s !important; /* smooth and readable speed */
+    padding: 12px 0 24px !important;
+  }
+  .review-card {
+    width: 280px !important;
+    margin-right: 16px;
+    flex: 0 0 auto;
+  }
+}
+@media (max-width: 480px) {
+  @keyframes driftReviews {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 8px)); }
+  }
+}
