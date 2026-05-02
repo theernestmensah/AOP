@@ -3660,3 +3660,47 @@ body.hide-default-cursor * {
     grid-template-columns: 1fr;
   }
 }
+/* Fix hamburger display for all pages */
+@media (max-width: 900px) {
+  .hamburger {
+    display: flex !important;
+  }
+}
+@media (max-width: 600px) {
+  .citations-wrapper {
+    height: auto !important;
+    min-height: 400px;
+    margin-bottom: 40px;
+  }
+  .citation-img {
+    position: relative !important;
+    transform: none !important;
+    animation: none !important;
+    margin-bottom: 20px;
+  }
+  .citations-container {
+    flex-direction: column;
+  }
+  .citations-wrapper:hover .citation-1,
+  .citations-wrapper:hover .citation-2 {
+    transform: none !important;
+  }
+}
+@media (max-width: 768px) {
+  /* Fix slider overlap/speed on mobile */
+  .review-wall {
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  }
+  .review-card {
+    width: 260px !important;
+    padding: 20px 16px !important;
+    white-space: normal;
+  }
+  .review-text {
+    font-size: 0.85rem !important;
+  }
+  .review-track {
+    animation-duration: 25s; /* Speed up a bit for mobile but keep it smooth */
+  }
+}
