@@ -3463,3 +3463,200 @@ body.hide-default-cursor * {
 
 
 
+@media (max-width: 900px) {
+  .hamburger {
+    display: flex;
+  }
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: var(--navy-mid);
+    flex-direction: column;
+    padding: 80px 30px 40px;
+    transition: var(--transition);
+    z-index: 999;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+    align-items: flex-start;
+  }
+  .nav-links.open {
+    right: 0;
+  }
+  .nav-link {
+    font-size: 1.1rem;
+    padding: 12px 0;
+    width: 100%;
+  }
+  .nav-cta {
+    margin-left: 0;
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+  }
+  .hamburger {
+    z-index: 1000;
+  }
+}
+@media (max-width: 768px) {
+  /* Ensure titles fit better on mobile */
+  .hero-title {
+    font-size: clamp(2rem, 8vw, 3.5rem);
+    line-height: 1.1;
+  }
+  .section-title {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+  }
+  .stat-num {
+    font-size: 2rem;
+  }
+
+  /* Ensure padding and layout is mobile-friendly */
+  .hero {
+    padding: 100px 16px 60px;
+  }
+  .section {
+    padding: 60px 0;
+  }
+  .hero-stats {
+    flex-direction: column;
+    padding: 24px;
+    gap: 20px;
+    border-radius: var(--radius-lg);
+  }
+  .stat-divider {
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.2), rgba(255,255,255,0));
+  }
+  .stat {
+    padding: 0;
+  }
+}
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: clamp(1.8rem, 8vw, 2.8rem);
+  }
+  .hero-badge {
+    padding: 8px 16px;
+    font-size: 0.7rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .hero-desc {
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+  }
+  .hero-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+@media (max-width: 768px) {
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .map-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .services-split-container {
+    flex-direction: column;
+    height: auto;
+  }
+  .split-panel {
+    min-height: 300px;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .about-features {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 480px) {
+  /* Fix any remaining overflow or alignment issues on very small screens */
+  .services-split-container {
+    border-radius: var(--radius-sm);
+  }
+  .split-panel {
+    padding: 30px 15px;
+    min-height: 280px;
+  }
+  .footer-links-col, .footer-contact-col {
+    text-align: center;
+  }
+  .footer-links-col ul, .footer-contact-col ul {
+    align-items: center;
+  }
+  .footer-contact-col li {
+    justify-content: center;
+  }
+  .footer-brand {
+    text-align: center;
+  }
+  .footer-logo-img {
+    margin: 0 auto;
+  }
+  .footer-social {
+    justify-content: center;
+  }
+}
+
+/* Additional fixes for specific pages on mobile */
+@media (max-width: 768px) {
+  /* Order Page fixes */
+  .order-platform-inner {
+    padding: 30px 20px;
+  }
+  .order-fields-grid {
+    grid-template-columns: 1fr;
+  }
+  .service-selector-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .order-progress {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
+@media (max-width: 480px) {
+  /* Services Page fixes */
+  .services-tabs button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  /* Portfolio Page fixes */
+  .portfolio-filters {
+    gap: 8px;
+  }
+  .filter-btn {
+    width: calc(50% - 4px);
+    padding: 10px 0;
+  }
+  .order-step-nav .btn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .service-selector-grid {
+    grid-template-columns: 1fr;
+  }
+}
