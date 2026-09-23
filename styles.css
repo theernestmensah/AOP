@@ -3663,7 +3663,7 @@ body.hide-default-cursor * {
 /* Fix hamburger display for all pages */
 @media (max-width: 900px) {
   .hamburger {
-    display: flex !important;
+    display: flex;
   }
 }
 @media (max-width: 600px) {
